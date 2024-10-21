@@ -48,24 +48,24 @@
 
     <table class="table dark">
         <tr>
-            <th>Product_id</th>
+            <th>id</th>
             <th>Products</th>
-            <th>Prijs</th>
-            <th>Descriptie</th>
-            <th>Fotos</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>photos</th>
         </tr>
 
         <tr> <?php
             $producten = $dbproduct->selectproduct(); 
             if ($producten) { 
                 foreach ($producten as $product) {?>
-            <td><?php echo $product['product_id']?></td>
-            <td><?php echo $product['productnaam']?></td>
-            <td><?php echo $product['prijs']?></td>
-            <td><?php echo $product['descriptie'];?></td>
-            <td><img src="<?php echo $product['fotos']?>" alt=""></td>
-            <td><a  class="submit_class"href="product-edit.php?product_id=<?php echo $product['product_id']; ?>">Edit</a></td>
-            <td><a class="submit_class"href="product-delete.php?product_id=<?php echo $product['product_id']; ?>">Delete</a></td>
+            <td><?php echo $product['id']?></td>
+            <td><?php echo $product['productName']?></td>
+            <td><?php echo $product['price']?></td>
+            <td><?php echo $product['description'];?></td>
+            <td><img src="<?php echo $product['photos']?>" alt=""></td>
+            <td><a  class="submit_class"href="product-edit.php?id=<?php echo $product['id']; ?>">Edit</a></td>
+            <td><a class="submit_class"href="product-delete.php?id=<?php echo $product['id']; ?>">Delete</a></td>
 
             </tr> <?php } }?>
     </table>
